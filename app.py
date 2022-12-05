@@ -18,6 +18,10 @@ async def serve(q: Q):
     If the user cannot find the book, user can find the books that matches to the given input.
     """
     msg = ""
+    
+    if not q.client.initialized:
+        q.client.initialized = True
+    
     if q.args.search:
         del q.page["books"]
         q.args.search_box_input = q.args.search_box_input.strip()
