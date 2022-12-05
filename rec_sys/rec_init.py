@@ -7,6 +7,8 @@ from typing import Tuple
 def read_dataset() -> Tuple[pd.DataFrame, pd.DataFrame]:
     """
     Read the datasets.
+    Returns:
+        tuple containing DataFrames for books and ratings
     """
     books = pd.read_csv("rec_sys/dataset/Books.csv", low_memory=False)
     ratings = pd.read_csv("rec_sys/dataset/Ratings.csv")

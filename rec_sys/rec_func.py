@@ -23,6 +23,8 @@ class Recommender:
         Parameters:
             book_name: str - name of the book.
         If the book is not found an exception will be raised.
+        Returns:
+            list of books.
         """
         book_idx = np.where(self.rating_matrix.index == book_name)[0][0]
         similar_items = list(enumerate(self.similarity_scores[book_idx]))
